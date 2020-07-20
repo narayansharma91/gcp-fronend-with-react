@@ -8,7 +8,7 @@ function App() {
   const [users, getUsers] = useState([])
   const getAllUsers = () => {
     axios.get('/api/users').then(result => {
-      getUsers([{'name': 'narayan'}])
+      getUsers(result)
     })
   }
   return (
