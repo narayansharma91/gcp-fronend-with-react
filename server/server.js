@@ -4,7 +4,7 @@ const app = express();
 const path = require('path')
 app.use(express.static(path.join(__dirname, '../', 'build'), {index: false}));
 app.use('/api', createProxyMiddleware({
-    target: '/',
+    target: 'http://10.128.0.23:80',
     changeOrigin: true
 }));
 
