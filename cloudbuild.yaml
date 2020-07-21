@@ -4,7 +4,7 @@ steps:
       - build
       - '--tag=gcr.io/$PROJECT_ID/frontend-app:$SHORT_SHA'
       - '--file=./Dockerfile'
-      - '--build-arg _PROXY_URL=$_PROXY_URL'
+      - '"--build-arg _PROXY_URL=$_PROXY_URL"'
       - .
   - name: gcr.io/cloud-builders/docker
     args:
