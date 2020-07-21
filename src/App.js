@@ -8,7 +8,7 @@ function App() {
   const [users, getUsers] = useState([])
   const getAllUsers = () => {
     axios.get('/api/users').then(result => {
-      getUsers(result)
+      getUsers(result.data)
     })
   }
   return (
@@ -17,15 +17,17 @@ function App() {
         <h1>This Is react application</h1>
         <button onClick={getAllUsers} style={{background:'green', color:'white', borderRadius:'5px', padding:'10px'}}>Get Users From Backend</button>
         <table>
+          <tbody>
           {
-            users.map(user => {
-              return <tr>
+            users.map((user, key) => {
+              return <tr key={key}>
                 <td>
                   {user.name}
                 </td>
               </tr>
             })
         }
+        </tbody>
         </table>
       </header>
     </div>
