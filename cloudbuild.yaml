@@ -2,10 +2,9 @@ steps:
   - name: gcr.io/cloud-builders/docker
     args:
       - build
-      - '--tag=gcr.io/$PROJECT_ID/frontend-app:$SHORT_SHA'
-      - '--file=./Dockerfile'
-      - '--build-arg _PROXY_URL=$_PROXY_URL'
-      - .
+      - >-
+        --tag=gcr.io/$PROJECT_ID/frontend-app:$SHORT_SHA --file=./Dockerfile
+        --build-arg _PROXY_URL=$_PROXY_URL .
   - name: gcr.io/cloud-builders/docker
     args:
       - push
@@ -28,8 +27,14 @@ steps:
       - '-c'
       - >
         gcloud compute instance-groups managed set-instance-template
-        $_INSTANCE_GROUP
-        --template=$_TEMPLATE_PREFIX-$(date +%d-%m)-${SHORT_SHA}
-        --region=$_REGION
+        $_INSTANCE_GROUP --template=$_TEMPLATE_PREFIX-$(date
+        +%d-%m)-${SHORT_SHA} --region=$_REGION
   - name: gcr.io/cloud-builders/gcloud
-    args: [ compute, instance-groups, managed, rolling-action, replace, $_INSTANCE_GROUP, --region=$_REGION]
+    args:
+      - compute
+      - instance-groups
+      - managed
+      - rolling-action
+      - replace
+      - $_INSTANCE_GROUP
+      - '--region=$_REGION'
