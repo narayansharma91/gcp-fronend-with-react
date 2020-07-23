@@ -13,7 +13,7 @@ steps:
         gcloud compute instance-templates create-with-container
         $_TEMPLATE_PREFIX-$(date +%d-%m)-${SHORT_SHA} --project=$PROJECT_ID
         --machine-type=f1-micro
-        --subnet=projects/PROJECT_ID/regions/us-central1/subnetworks/default
+        --subnet=projects/$PROJECT_ID/regions/us-central1/subnetworks/default
         --image=cos-stable-81-12871-181-0 --image-project=cos-cloud 
         --preemptible 
         --container-image="gcr.io/$PROJECT_ID/frontend-app:$SHORT_SHA"
