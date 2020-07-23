@@ -10,7 +10,7 @@ steps:
     args:
       - '-c'
       - >
-        gcloud compute instance-templates create-with-container
+        gcloud compute instance-templates create-with-container 
         $_TEMPLATE_PREFIX-$(date +%d-%m)-${SHORT_SHA} --project=$PROJECT_ID
         --machine-type=f1-micro
         --subnet=projects/$PROJECT_ID/regions/us-central1/subnetworks/default
