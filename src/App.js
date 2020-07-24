@@ -29,6 +29,11 @@ function App() {
         }
         </tbody>
         </table>
+        <div>
+          Image uses for CDN (caching)
+        <img src={'https://storage.googleapis.com/gcp-frontend-app/1Odq43G.jpg'}/>
+       
+          </div>
       </header>
     </div>
   );
