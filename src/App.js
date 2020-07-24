@@ -31,7 +31,7 @@ function App() {
         </table>
         <div>
           Image uses for CDN (caching)
-        <img src={'images/1Odq43G.jpg'}/>
+        <img src={'/images/1Odq43G.jpg'}/>
        
           </div>
       </header>
