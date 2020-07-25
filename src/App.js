@@ -30,9 +30,12 @@ function App() {
         </tbody>
         </table>
         <div>
-          Image uses for CDN (caching)
-        <img src={'/images/1Odq43G.jpg'}/>
-       
+          Image uses for CDN (caching) updated<br/>
+        <img src={'/images/1Odq43G.jpg'} width="400"/>
+        <img src={'/images/IMG_20191230_102402.jpg'}  width="400"/>
+        <img src={'/images/IMG_20191230_123630.jpg'} width="400"/>
+        <img src={'/images/IMG_20191230_124033.jpg'} width="400"/>
+        <img src={'/images/IMG_20191230_124035.jpg'} width="400"/>
           </div>
       </header>
     </div>
